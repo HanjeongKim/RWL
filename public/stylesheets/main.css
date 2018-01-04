@@ -1,0 +1,205 @@
+body{
+    font-family:Righteous, hanna !important;
+}
+/* Main */
+.main-page{
+  height:100%;
+  color:black;
+  border: 3px solid black;
+  background: rgba(245, 245, 239,0.7);
+  min-height:100vh;
+}
+.outline{
+  height: 100%;
+  font-size:20px;
+}
+.empty-divider{
+  height:25px;
+}
+.cursor{
+    cursor : pointer;
+}
+/* Nav */
+.nav-main{
+  position: relative;
+  padding: 20px 20px;
+  z-index:2;
+  width:90vw;
+}
+.nav-menu{
+  margin-top:30px;
+  padding-right : 0px !important;
+  text-align:right;
+  color:black;
+  font-size:20px;
+}
+.nav-menus{
+  color:black !important;
+  text-decoration: none;
+}
+.nav-menus:hover{
+  color:rgb(242, 90, 6) !important;
+  text-decoration: none !important;
+}
+
+.nav-menus{
+  margin-right:23px;
+}
+.logo{
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: 50%;
+  min-width: 200px;
+  min-height:45px;
+  height:45px;
+  width:200px;
+  margin-top:20px;
+  margin-left:25px;
+}
+
+.web {
+  display:inline-block;
+}
+.mobile {
+  display:none;
+}
+/*art_section*/
+  /* Menu*/
+ul{
+   list-style:none;
+   padding-left:20px;
+   margin-left:10px;
+}
+.menu{
+  margin-top:50px;
+  z-index: 1;
+  height: 100vh;
+}
+.sidenav a {
+    text-decoration: none;
+    transition: 0.3s;
+}
+#menuicon{
+  width: 100px;
+  left:20px;
+  top:17px;
+  padding-left:0px;
+}
+#menuicon span{
+  font-size:30px;
+}
+/* main_images*/
+.main-images{
+  min-width:1500px;
+  width:100%;
+  height:auto;
+  min-height: 90vh;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+  margin-left:3px;
+  margin-right:3px;
+  z-index: 0;
+}
+#myCarousel{
+  display:block;
+  position: absolute;
+  width:98.5vw;
+  top:120px;
+  left:3px;
+}
+
+.dropdown-menu{
+  background-color: rgba(245, 245, 239,0.85) !important;
+}
+.dropdown-menu a, .dropdown-menu2 a{
+  margin-left: 10px;
+  font-size:19px;
+  color:black;
+  text-decoration: none !important;
+}
+.dropdown-menu a:hover, .dropdown-menu a:focus, .dropdown-menu2 a:hover, .dropdown-menu2 a:focus{
+  text-decoration: none !important;
+  color:rgb(242, 90, 6) !important;
+}
+.dropdown-menu a:visited, .dropdown-menu2 a:visited{
+  color:black ;
+}
+/* bottom Info */
+.info_content{
+   position: block;
+   text-align:center;
+   margin-top:100vh;
+   height:10vh
+}
+/*For Device(휴대폰용 위치 조정)*/
+/*아이폰 5*/
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .main-page{
+      height:100vh;
+      border: 2px solid black;
+      font-family:Righteous;
+    }
+    .empty-divider{
+      height:15px;
+    }
+    .web {
+      display:none;
+    }
+    .mobile{
+      display:inline-block;
+    }
+    .nav-menus{
+      margin-right:10px;
+      margin-top:-2px;
+    }
+    .search_icon{
+      font-size:20px;
+      color:rgb(99, 99, 99) !important;
+      display:block;
+    }
+    .logo{
+      min-width: 100px;
+      min-height:30px;
+      height:30px;
+      width:auto;
+      margin-top:10px;
+      margin-left:15px;
+    }
+    .nav-menu{
+      margin-top:13px;
+      font-size:10px;
+    }
+    ul{
+       padding-left:6px;
+    }
+    .menu{
+      margin-top:30px;
+      height: 50vh;
+    }
+    .main-images{
+      min-width:320px;
+      min-height:60vh;
+      background-size: 100% 100%;
+      margin-top:70px;
+    }
+    .info_content{
+       margin-top:60vh;
+       height:20vh;
+       font-size:10px;
+    }
+    .footer{
+      font-size:10px;
+    }
+    #myCarousel{
+      top:6px;
+    }
+    .dropdown-menu{
+      top:140% !important;
+      left:-80px !important;
+      min-width: 130px !important;
+    }
+}

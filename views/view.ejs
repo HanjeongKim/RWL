@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>WannaOne::금융상품 상세보기</title>
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+        .tb_container {
+            width: 80%;
+            margin: 10px auto;
+            margin-bottom: 50px;
+        }
+
+
+
+
+        footer {
+            width: 100%;
+            height: 80px;
+            /*            background-color: lightgray;*/
+            position: relative;
+            clear: both;
+        }
+
+
+        .foot_div {
+            float: left;
+            width: 30%;
+            margin-left: 2.5%;
+            height: 100%;
+            display: inline-block;
+            color: slategray;
+        }
+
+        .content-div {
+            margin-left: 27%;
+            margin-top: 80px;
+            width: 820px;
+            height: 680px;
+            /*            background-color: gold;*/
+            text-align: center;
+        }
+
+        #content-1-5 {
+            height: 40px;
+            width: 80px;
+/*
+            border-color: #248278;
+            border-width: 5px;
+*/
+            background-color:#C7DBD9;
+            border-radius: 10px;
+/*            border-style: solid;*/
+            margin-top: 20px;
+            padding-top:5px;
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Jeju Gothic';
+        }
+
+        #content-2-5 {
+            margin-top: 30px;
+
+        }
+
+        #content-2-name {
+            font-size: 40px;
+            font-family: 'Jeju Gothic';
+        }
+
+        #content-2-description {
+            font-size: 20px;
+            font-family: 'Jeju Gothic';
+        }
+
+        .content-3 {
+            /*
+            border-style: solid;
+            border-color: black;
+*/
+            margin-top: 30px;
+            float: left;
+            width: 50%;
+            height: 130px;
+        }
+
+        #content-3-5 {
+            /*
+            border-style: solid;
+            border-color: black;
+*/
+            display: inline-block;
+            /*            float: left;*/
+            width: 80%;
+
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+
+        #goback-btn {
+            cursor:pointer;
+            width: 90px;
+            height: 60px;
+            border-style: solid;
+            border-width: 5px;
+            border-radius: 15px;
+            background-color: white;
+            border-color: lightgray;
+            font-size: 18px;
+            font-family: 'Jeju Gothic';
+            /*                    border-color:#D05347;*/
+        }
+        #goback-btn:hover {
+            transition: 1s;
+            border-color: #D05347;
+            background-color: #E2A59F;
+        }
+        
+
+        #content-4-5 {
+            width: 80%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            margin-left: 10%;
+
+            font-family: 'Jeju Gothic';
+            /*            background-color: gold;*/
+        }
+
+        #content-5-5 {
+
+            margin-top: 40px;
+            margin-right: 10px;
+
+
+        }
+
+                
+
+    </style>
+   
+</head>
+
+<body>
+   
+        <div class="content-div">
+           
+             <hr style="width:780px; height:5px; background-color:#248278; margin-left:30%;">
+            <!--            상품명, 상품 설명-->
+            <div id="content-2-5">
+                <div id="content-2-name">
+                    <%=rows[0].name%>
+                </div>
+                <div id="content-2-img" style="width:650; height:600;">
+                    <%=rows[0].img%>
+                </div>
+                
+                
+                <div id="content-2-price">
+                    <%=Number(rows[0].price).toLocalString()%>
+                </div>
+                <div id="content-2-description">
+                    <%=rows[0].description%>
+                </div>
+            </div>
+            
+              <hr style="width:780px; height:5px; background-color:#248278; margin-left:30%;">
+            
+            <div id="content-5-5">
+                <button id="goback-btn" type="button">경매참여</button>
+                <button id="goback-btn" type="button" onClick="history.back();">돌아가기</button>
+            </div>
+        </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+ul { list-style-type:none; }
+.artworks-page-name{
+  text-align: center;
+}
+.page_name{
+  margin-top:150px;
+  text-align: center;
+  font-size:40px;
+}
+.info{
+  margin-top:40px !important;
+}
+
+#maingrid{
+	position:relative;
+	width:100%;
+	margin:0 auto 25px;
+	padding-bottom: 10px;
+}
+.grid{
+	width:160px;
+	min-height:220px;
+	padding:15px;
+	background:#fff;
+	margin:5px;
+	font-size:12px;
+	float:left;
+	box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+	-moz-box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+	-webkit-box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+
+	-webkit-transition: top 1s ease, left 1s ease;
+	-moz-transition: top 1s ease, left 1s ease;
+	-o-transition: top 1s ease, left 1s ease;
+	-ms-transition: top 1s ease, left 1s ease;
+}
+
+.grid strong {
+	border-bottom:1px solid #ccc;
+	margin:10px 0;
+	display:block;
+	padding:0 0 5px;
+	font-size:20px;
+}
+.grid .meta{
+	text-align:right;
+	color:black;
+	font-style:italic;
+  font-size:17px;
+}
+.grid .imgholder img{
+	max-width:100%;
+  min-height: 120px;
+	background:#ccc;
+	display:block;
+}
+.explain{
+  font-size:18px !important;
+}
+.grid p{
+  font-size: 15px;
+  margin-bottom: 0px;
+}
+.grid a{
+  text-decoration: none;
+  color:black;
+  cursor: pointer;
+}
+.grid a:hover{
+  text-decoration: none;
+  color:rgb(242, 90, 6);
+}
+.grid img:hover{
+  opacity: 0.7;
+}
+.custom-btn{
+  border:none;
+  background-color: transparent;
+  font-size:23px;
+  margin-right:15px;
+  margin-left:15px;
+  border:2px solid black;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.custom-btn:hover{
+  text-decoration: none;
+  border:2px solid rgb(242, 90, 6);
+  color:rgb(242, 90, 6);
+}
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    #maingrid{
+    	position:relative;
+    	width:100%;
+    	padding-bottom: 10px;
+    }
+
+    .grid{
+    	width:120px;
+    	min-height:60px;
+    	padding: 15px;
+    	background:#fff;
+    	margin:8px;
+    	font-size:12px;
+    	float:left;
+    	box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+    	-moz-box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+    	-webkit-box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+
+    	-webkit-transition: top 1s ease, left 1s ease;
+    	-moz-transition: top 1s ease, left 1s ease;
+    	-o-transition: top 1s ease, left 1s ease;
+    	-ms-transition: top 1s ease, left 1s ease;
+    }
+  }

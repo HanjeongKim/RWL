@@ -1,0 +1,109 @@
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .sidenav {
+        font-family:Righteous, hanna !important;
+        display:block;
+        height: 100vh;
+        width: 0;
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        background-color: rgba(245, 245, 239,0.95);
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top:60px;
+        margin-top:3px;
+        margin-bottom:3px;
+    }
+    ul{
+       list-style:none;
+       padding-left:20px;
+       margin-left:10px;
+    }
+    .sidenav a, .sidenav a:visited{
+      text-decoration: none;
+      color:black;
+    }
+    .sidenav a:hover, .sidenav a:focus{
+      text-decoration: none;
+      color:rgb(242, 90, 6);
+    }
+    .main_menu1{
+      font-size:20px;
+      color:black;
+      margin-bottom: 6px;
+    }
+    .main_menu1_li, .main_menu1_li:visited{
+      color:black;
+      font-size:18px;
+    }
+    .main_menu2{
+      font-size:20px;
+      margin-bottom: 6px;
+      color:black;
+    }
+    .main_menu2_li, .main_menu2_li:visited{
+      color:black;
+    }
+    .main_menu3, .main_menu3:visited{
+      color:black;
+    }
+    .main_menu3{
+      font-size:16px;
+    }
+    .main_menu4_li, .main_menu4_li:visited{
+      font-size:15px;
+    }
+    .closebtn:hover, .closebtn:focus{
+      color:rgb(242, 90, 6);
+    }
+    .closebtn, .closebtn:visited  {
+      font-size:20px;
+      color:rgb(242, 90, 6);
+    }
+    .sidenav a {
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .afterlogin{
+      margin-left: 10px;
+      margin-right: 20px;
+    }
+    .afterlogin_right{
+      margin-left: 40px;
+    }
+    .afterlogin_right2{
+      margin-left: 52px;
+    }
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 15px;
+        font-size: 50px;
+        margin-left: 50px;
+        margin-top:0px;
+    }
+    #menuicon{
+      display:block;
+      width: 40px;
+      left:5px;
+      top:5px;
+    }
+    #menuicon span{
+      font-size:25px;
+    }
+    .blank{
+      margin-left:20px;
+      margin-top:40vh;
+      border-color:black;
+      width:260px;
+      margin-bottom:0px;
+    }
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
+}

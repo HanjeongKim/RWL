@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../public/css/maxcdn-bootstrap.min.css" rel="stylesheet">
+    <script src="../../public/js/axios.js"></script>
+    <title>WannaOne::관리자 - 상품리스트</title>
+    <style type="text/css">
+        @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+
+        table {
+            width: 1100px;
+            font-size: 15px;
+            text-align: center;
+            font-family: 'Jeju Gothic';
+        }
+
+        th {
+            text-align: center;
+        }
+
+        #product-select-box {
+            position: relative;
+            top: -15px;
+            left: 85px;
+            width: 100px;
+        }
+
+        #desc_tb {
+            width: 500px;
+        }
+
+
+        #my {
+            font-family: 'Jeju Gothic';
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            margin-left: 10px;
+            margin-right: 15px;
+        }
+
+        .nav-div {
+            margin-top: 15px;
+            margin-left: 10.5%;
+        }
+
+        .services {
+            zoom: 1;
+            /*            margin-left:50px;*/
+            padding: 0.5em;
+            position: absolute;
+            height: 70px;
+            width: 100%;
+            opacity: 0.7;
+            background-color: #D0E3E0;
+            color: black;
+            font-family: 'Jeju Gothic';
+        }
+
+        #div-description {
+            width: 150px;
+            height: 25px;
+            text-overflow: ellipsis;
+            /*            background-color: gold;*/
+            overflow: hidden;
+            white-space: nowrap;
+            display: inline-block;
+        }
+
+        .vuediv {
+            margin-top: 6%;
+            margin-left: 10%;
+            width: 80%;
+
+        }
+
+        .edit-inst {
+/*            margin-left:15px;*/
+            display: inline-block;
+            height: 45px;
+            width: 100px;
+            background-color: white;
+            border-color: lightgray;
+            border-radius: 5px;
+            border-width: 4px;
+            border-style: solid;
+            font-size: 15px;
+            color: black;
+            text-align: center;
+        }
+        
+        .control-group{
+            margin-bottom:20px;
+            font-family:'Jeju Gothic';
+        }
+        
+        #btn-register:hover{
+            border-color:#248278;
+            opacity:0.7;
+/*            background-color:#82CAC2;*/
+        }
+        
+        td{
+            height:30px;
+        }
+
+        .btn-edit{
+            width:50px;
+            height:30px;
+            background:white;
+            border-radius:7px;
+            border-style:solid;
+        }
+        
+        #btn-mod{
+            border-color:#0F308F;
+        }
+        
+        #btn-mod:hover{
+            border-color:#899DD6;
+            background-color:#899DD6;
+        }
+        
+        
+        #btn-del{
+            border-color:#801313;
+        }
+        #btn-del:hover{
+               border-color:#C98383;
+            background-color:#C98383;
+        }
+    </style>
+
+    <script src="../../public/js/code-jquery-1.10.2.js"></script>
+  
+</head>
+
+<body>
+
+        <div class="container vuediv">
+            <div class="jquery-script-clear"></div>
+            <!--<h3 style="margin-top:150px; text-align:center;">Admin-Products Paging Test</h3>-->
+            <br><br>
+<a href='/admin/instruments/goregister'><button id="btn-register" class="edit-inst" style="float:right;">작품 등록</button></a>
+        
+            <table class="table table-hover">
+                <tr v-for="art in arts">
+                    <td style="width:200px; height:180;">{{art.img}}</td>
+                    <td>{{art.price}}원</td>
+                    
+              <td>
+                    <button @click="deleteInstrument(obj)"  id="btn-del"  class="btn-edit">
+                      판매완료
+                     </button>
+                  </td>
+                
+                </tr>
+            </table>
+        </div>
+
+</body>
+
+<script src="../../public/js/unpkg-vue.js"></script>
+<script>
+    var data = {
+            arts: [],
+        };
+    
+    var vm = new Vue({
+        el: '.vuediv',
+          data: function(){
+            return data;
+        }
+        ,
+
+
+        methods: {
+            list: function(event) {
+                var name = event.srcElement.innerHTML;
+                console.log('name  = ' + name);
+                var imgByName = this.art.filter(function(art) {
+                    return art.name === name;
+                });
+                console.dir(imgByName);
+                var code = imgByName[0].code;
+                location.href = '/instruments/viewinstruments?icode=' + code;
+            },
+            fetchArt: function() {
+                axios.get('/api/art').then(function(response) {
+                    var artReady = response.data.result.map(function(art) {
+                        art.editing = false;
+                        return art;
+                    });
+
+                    Vue.set(vm, 'art', response.data.result);
+                })
+            },
+            deleteArt: function(art) {
+
+               location.href = '/admin/instruments/delete?icode='+art.code; 
+
+
+            },
+            modifyArt: function(art) {
+                location.href = '/admin/instruments/gomodify?icode='+art.code;
+            },
+            formatValue: function(num){
+                return Number(num).toLocaleString();
+            }
+        },
+        
+        created() {
+            var temp = {};
+            <%
+                    for(var i=0; i<rows.length; i++) {
+                %>
+            temp = {};
+            temp.code = `<%=rows[i].code%>`;
+            temp.img = `<%=rows[i].img%>`;
+            temp.price = `<%=rows[i].price%>`;
+            temp.name = `<%=rows[i].name%>`;
+            temp.description = `<%=rows[i].description%>`;
+
+
+            this.art.push(temp);
+            <%    
+                    }
+                %>
+
+
+        },
+        
+        mounted: function() {
+           this.fetchArt();
+    }
+    });
+
+</script>
+
+</html>

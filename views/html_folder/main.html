@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ARookieT">
+    <meta property="og:url" content="https://arookiet.mybluemix.net/">
+    <meta property="og:description" content="미술작품 구매/판매 플랫폼">
+    <meta property="og:image" content="../images/MainLogo.png">
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/hanna.css">
+    <link rel="stylesheet" href="../resources//css/main.css">
+    <link rel="stylesheet" href="../resources//css/loading.css">
+    <link rel="stylesheet" href="../resources//css/side_nav_mobile.css">
+    <!-- Latest compiled and minified CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="SHORTCUT ICON" href="../images/MainLogo2.png">
+    <title>ARookieT</title>
+  </head>
+  <body onload="myFunction()" style="margin:0;">
+    <div class="wrap">
+      <div id="loader">
+        <div id="bounce" style="background-image:url('../images/MainLogo2.png');"></div>
+      </div>
+    </div>
+    <div id="myDiv" class="animate-bottom">
+      <div class="container-fluid main-page">
+        <div class="nav-main">
+          <div class="row">
+            <div id="menuicon" class="col-md-1 col-sm-1 col-xs-1 mobile"><span style="cursor:pointer" onclick="openNav()">☰</span></div>
+            <div id="mySidenav" class="sidenav mobile"><a href="javascript:void(0)" onclick="closeNav()" class="closebtn">×</a>
+              <ul>
+                <li class="main_menu1">ARTS</li>
+                <ul>
+                  <li><a href="/hot" class="cursor main_menu1_li">HOT</a></li>
+                  <li><a href="/artworks" class="cursor main_menu1_li">ALL ARTS</a></li>
+                  <li><a class="cursor main_menu1_li">EVENT</a></li>
+                </ul>
+                <div class="empty-divider"></div>
+                <li><a href="/artists" class="cursor main_menu2">ARTISTS</a></li>
+                <div class="empty-divider"></div>
+                <li></li>
+                <li><a class="cursor main_menu3">Info & Help</a></li>
+                <li><a class="cursor main_menu3">About us</a></li>
+              </ul>
+              <hr style="margin-left:20px; margin-top:45vh; border-color:black; width:260px; margin-bottom:5px;" class="mobile">
+              <div style="margin-left:20px;" class="mobile hangul"><span>홈</span><span style="margin-left:200px;">내 계정</span></div>
+            </div>
+            <div style="text-align:center" class="col-sm-2 col-xs-9 col-md-2 col-lg-2 cursor"><a href="/" style="display:inline-block;"><img src="../images/MainLogo3.png" alt="" style="height:30px;" class="logo"></a></div>
+            <div class="nav-menu col-lg-10 col-md-9 col-sm-9 col-xs-1"><span class="dropdown web"><span id="dropdownMenuButton" data-toggle="dropdown" class="dropdown-toggle nav-menus cursor web">ARTS</span>
+                <div aria-labelledby="dropdownMenuButton" class="dropdown-menu"><a href="/hot" class="nav-drop-down-menus cursor web dropdown-item">HOT</a><br><a href="/artworks" class="nav-drop-down-menus cursor web dropdown-item">ALL ARTS</a><br><a herf="" class="nav-drop-down-menus cursor web dropdown-item">EVENT</a></div></span><a href="/artists"><span class="nav-menus cursor web">ARTISTS</span></a><span class="dropdown web"><span id="dropdownMenuButton2" data-toggle="dropdown" class="dropdown-toggle nav-menus cursor web">INFO</span>
+                <div aria-labelledby="dropdownMenuButton2" class="dropdown-menu dropdown-menu2"><a href="/" class="cursor web dropdown-item">HELP</a><br><a href="/" class="cursor web dropdown-item">ABOUT US</a><br></div></span><a href=""><span class="nav-menus cursor web">FIND</span></a><a href="/login" class="nav-menus cursor web"><span>LOGIN</span></a><span class="nav-menus cursor mobile glyphicon glyphicon-search"></span></div>
+          </div>
+        </div>
+        <div class="art_section">
+          <div id="myCarousel" data-ride="carousel" class="carousel slide">
+            <div class="carousel-inner">
+              <div style="background-image:url('../images/작품2.jpg')" class="item main-images"></div>
+              <div style="background-image:url('../images/작품3.jpg')" class="item main-images"></div>
+              <div style="background-image:url('../images/작품4.jpg')" class="item active main-images"></div>
+            </div>
+          </div>
+        </div>
+        <div class="info">
+          <div class="info_content">
+            <p><span style="border-bottom:1px solid black; padding:5px;">Add Your ART</span></p>
+          </div>
+        </div>
+        <footer style="text-align:center;" class="footer">
+          <p>By Hongik University ＆ ARookieT</p>
+        </footer>
+      </div>
+    </div>
+    <script>
+      function openNav() {
+      document.getElementById("mySidenav").style.width = "300px";
+      }
+      function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+    <script>
+      var myVar;
+      function myFunction() {
+      myVar = setTimeout(showPage, 0000);
+      }
+      function showPage() {
+      $("#loader").fadeOut(1000);
+      $("#myDiv").fadeIn(2000);
+      }
+    </script>
+  </body>
+</html>

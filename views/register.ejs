@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>WannaOne::관리자 - 상품 등록</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="../../public/js/axios.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+    <style type="text/css">
+        @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+        tr {
+            height: 40px;
+            text-align: center;
+        }
+
+        th {
+            text-align: center;
+        }
+
+
+
+        #my {
+            font-family: 'Jeju Gothic';
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            margin-left: 10px;
+            margin-right: 15px;
+        }
+
+        .nav-div {
+            margin-top: 15px;
+            margin-left: 10.5%;
+        }
+
+        .services {
+            zoom: 1;
+            /*            margin-left:50px;*/
+            padding: 0.5em;
+            position: absolute;
+            height: 70px;
+            width: 100%;
+            opacity: 0.7;
+            background-color: #D0E3E0;
+            color: black;
+            font-family: 'Jeju Gothic';
+        }
+
+        table {
+            font-family: 'Jeju Gothic';
+        }
+
+        #mem-txt {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 25px;
+            font-family: 'Jeju Gothic';
+        }
+
+        #reg-product {
+            margin-top: 60px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 35px;
+            font-family: 'Jeju Gothic';
+        }
+
+        #tb-product {
+            width: 700px;
+            height: 650px;
+
+        }
+
+        tr {
+            font-size: 20px;
+        }
+
+        .btn-adm {
+            cursor:pointer;
+            margin-top: 10px;
+            margin-right: 30px;
+            width: 100px;
+            height: 50px;
+            border-radius: 13px;
+            border-style: solid;
+            font-size: 20px;
+            border-width: 6px;
+            background-color: white;
+            border-color: lightgray;
+            text-align: center;
+
+        }
+
+        .btn-adm:hover {
+            border-color: #8BAAA6;
+            border-width: 5px;
+        }
+
+        .input-form {
+            float: left;
+            width: 350px;
+            height: 40px;
+            border-radius: 5px;
+            border-style: solid;
+            border-color: lightgray;
+            border-width: 1px;
+        }
+
+        .input-form-sub {
+            float: left;
+            width: 80px;
+            height: 40px;
+            border-radius: 5px;
+            border-style: solid;
+            border-color: lightgray;
+            border-width: 1px;
+            margin-left:5px;
+            text-align:center;
+        }
+
+        .form-inline {
+            font-size: 15px;
+        }
+
+        .btn-input {
+            margin-left:5px;
+            background-color: #9EC2BF;
+            border-style:none;
+            height:30px;
+            width:30px;
+            font-size:20px;
+        }
+
+        .form-group {
+            font-size: 20px;
+            font-family: 'Jeju Gothic';
+            align-content: center;
+        }
+        #name {
+            width: 650px;
+        }
+        #price {
+            width: 650px;
+        }
+        #description {
+            width: 650px;
+        }
+    </style>
+   <script>
+    function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#img')
+                        .attr('src', e.target.result)
+                        .width(650)
+                        .height(600);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+        <!--
+    <section class="services">
+
+       <div id="mem-txt">상품 등록</div>
+           <br>
+            </section>
+-->
+        <h3 id="reg-product">작품 등록</h3>
+        <hr style="width:780px; height:5px; background-color:#248278; margin-left:30%;">
+        <div id="app" class="container" style="margin-top:20px; margin-left:610px;">
+
+                <colgroup>
+                    <col width="35%" />
+                    <col width="65%" />
+                </colgroup>
+
+                    <form id="regForm" name="regForm" method="post" action="/admin/instruments/register">
+
+                        <div class="form-group">
+                            <label for="name">작품명 </label>
+                            <input type="text" id="name" name="name" placeholder="작품명 입력" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="upload_picture">작품 업로드</label><br/>
+                            <input type="file" name="img" onchange="readURL(this);" />
+                            <img id="img" src="#" alt="작품 사진" />
+
+                        </div>
+                        <div class="form-group">
+                                    <label for="price">시작가</label>
+                                        <input type="number" class="form-control" id="price" name="price" placeholder="시작가를 등록하세요">
+
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">작품 설명</label><br/>
+                            <textarea id="description" name="description" class="form-control" placeholder="상세설명 입력"></textarea>
+                        </div>
+
+                    <div class="form-group" align="center">
+
+                                <button id="registerBtn" name="registerBtn" type="button" class="btn-adm">등록</button>
+
+                                <input class="btn-adm" onclick="location.href='/admin/instruments/list'" value="취소">
+                        </div>
+ </form>
+    </div>
+</body>
+</html>

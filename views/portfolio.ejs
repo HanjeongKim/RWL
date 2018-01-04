@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/hanna.css">
+    <link rel="stylesheet" href="/stylesheets/portfolio.css">
+    <link rel="stylesheet" href="/stylesheets/normal.css">
+    <link rel="stylesheet" href="/stylesheets/side_nav.css">
+    <link rel="stylesheet" href="/stylesheets/side_nav_mobile.css">
+    <!-- Latest compiled and minified CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript-->
+    <script src="https://use.fontawesome.com/af38281411.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="SHORTCUT ICON" href="/images/MainLogo2.png">
+    <title>RWL</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script src="https://super8ky.cafe24.com/js/blocksit.min.js"></script>
+</head>
+
+<body>
+  <header class="nav-main">
+    <div class="row">
+      <div id="menuicon" class="col-md-1 col-sm-1 col-xs-1 mobile"><span style="cursor:pointer" onclick="openNav()">☰</span></div>
+      <div id="mySidenav" class="sidenav mobile"><a href="javascript:void(0)" onclick="closeNav()" class="closebtn">×</a>
+        <ul>
+          <li class="main_menu1">Home</li>
+          <li class="main_menu1">ARTWORKS</li>
+        </ul>
+      </div>
+      <div style="text-align:center" class="col-sm-2 col-xs-9 col-md-2 col-lg-2 cursor">
+        <a href="/" style="display:inline-block;">
+          <!-- <img src="/images/MainLogo3.png" alt="" style="height:30px;" class="logo"/> -->
+        </a>
+      </div>
+      <div class="nav-menu col-lg-9 col-md-9 col-sm-9 col-xs-1">
+        <a href="/login" class="nav-menus cursor web">
+          <span>HOME</span>
+        </a>
+        <a href="/login" class="nav-menus cursor web">
+          <span>ARTWORKS</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container-fluid main-page">
+    <div class="outline">
+      <div class="info">
+        <div class="artist_info">
+          <div class="row">
+            <div class="col-xs-5 col-sm-3 col-lg-3 col-md-3">
+              <img id="user-image" border="0" alt="Null" class="pull-right" src="/images/boy.png"/>
+            </div>
+            <div class="col-xs-3 col-sm-6 col-lg-6 col-md-6 user_name">
+              <p><span style="border-bottom:1px solid black; padding:5px;"><%= userId %></span></p>
+            </div>
+            <div class="col-xs-5 col-sm-5 col-lg-5 col-md-5 user_info">
+              <p><span>하나대학교</span></p>
+              <p class="icons">
+              </p>
+            </div>
+            <div class="col-xs-12 col-sm-2 col-lg-2 col-md-2 web">
+              <p style="text-align:right;">
+                <a href="/portfolio/enroll"><button class="custom-btn btn2">작품 업로드 하기</button></a>
+              </p>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-sm-offset-2 col-xs-offset-1 col-sm-8 col-md-8 col-xs-10 artworks_img">
+              <div id="maingrid">
+                <ul>
+                  <li class="grid">
+                    <div class="imgholder"><a href="/"><img src="/images/artworks/작품1.jpg" border="0" alt="Null"/></a><a href="/">
+                        <button class="custom-btn choose1">작품 상세 보기</button></a></div>
+                  </li>
+                  <li class="grid">
+                    <div class="imgholder"><a href="/"><img src="/images/artworks/작품2.jpg" border="0" alt="Null"/></a><a href="/">
+                        <button class="custom-btn choose1">작품 상세 보기</button></a></div>
+                  </li>
+                  <li class="grid">
+                    <div class="imgholder"><a href="/"><img src="/images/artworks/작품3.jpg" border="0" alt="Null"/></a><a href="/">
+                        <button class="custom-btn choose1">작품 상세 보기</button></a></div>
+                  </li>
+                  <li class="grid">
+                    <div class="imgholder"><a href="/"><img src="/images/artworks/작품4.jpg" border="0" alt="Null"/></a><a href="/">
+                        <button class="custom-btn choose1">작품 상세 보기</button></a></div>
+                  </li>
+                  <li class="grid">
+                    <div class="imgholder"><a href="/"><img src="/images/artworks/작품5.jpg" border="0" alt="Null"/></a><a href="/">
+                        <button class="custom-btn choose1">작품 상세 보기</button></a></div>
+                  </li>
+                  <li class="grid">
+                    <div class="imgholder"><a href="/"><img src="/images/artworks/작품6.jpg" border="0" alt="Null"/></a><a href="/">
+                        <button class="custom-btn choose1">작품 상세 보기</button></a></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-sm-offset-2 col-xs-offset-1 col-sm-8 col-md-8 col-xs-10 info_content">
+              <p style="text-align:center;"><a href="/" class="mobile">
+                  <button class="custom-btn btn2">작품 업로드 하기</button></a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/javascripts/portfolio.js"></script>
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "300px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+  </script>
+</body>
+
+</html>

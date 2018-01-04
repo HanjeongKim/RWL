@@ -1,0 +1,249 @@
+body{
+    font-family:Righteous, hanna !important;
+}
+header{
+  font-family:Righteous, hanna !important;
+}
+.hangul{
+  font-size:15px;
+}
+.main-page{
+  height:100%;
+  border: 3px solid black;
+  background: rgba(245, 245, 239,0.7);
+  min-height:100vh;
+}
+.responsive-image {
+  height: auto;
+  width: 100%;
+  min-height:70vh;
+  max-height:85vh;
+  min-width:300px;
+}
+.logo{
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: 50%;
+  min-width: 170px;
+  min-height:36px;
+  height:36px;
+  width:170px;
+  margin-top:20px;
+  margin-left:0px;
+}
+.picture {
+  margin-bottom: 20px;
+}
+.picture a:hover{
+  opacity: 0.7;
+}
+.nav-main{
+  position: fixed;
+  background: rgba(245, 245, 239,0.7);
+  width:98.5vw;
+  margin-left:3px;
+  height:130px;
+  font-size:20px;
+  border-top:3px solid black;
+  font-family:Righteous;
+  padding: 20px 20px;
+  z-index:2;
+}
+.info{
+  margin-top:180px;
+}
+.web {
+  display:inline-block !important;
+}
+.mobile {
+  display:none !important;
+}
+.glyphicon-search:before{
+  display:none;
+}
+#info_title{
+  font-size:40px;
+  margin-bottom: 40px;
+}
+.text_column{
+  font-size:20px;
+  margin-top:50px;
+  margin-bottom: 50px;
+}
+/* Main */
+.empty-divider{
+  height:15px;
+}
+.cursor{
+    cursor : pointer;
+}
+/* Nav */
+.nav-menu{
+  margin-top:30px;
+  padding-right : 0px !important;
+  text-align:right;
+  color:black;
+}
+.nav-menus{
+  text-decoration: none;
+  margin-right:23px;
+}
+.nav-menus:hover{
+  color:rgb(242, 90, 6) !important;
+  text-decoration: none;
+}
+.nav-menus:visited, .nav-menus:focus, .nav-menus{
+  text-decoration: none;
+  color:black;
+}
+.dropdown-menu{
+  background-color: rgba(245, 245, 239,0.85) !important;
+}
+.dropdown-menu a, .dropdown-menu2 a, .dropdown-menu3 a{
+  margin-left: 10px;
+  font-size:19px;
+  color:black;
+  text-decoration: none !important;
+}
+.dropdown-menu a:hover, .dropdown-menu a:focus, .dropdown-menu2 a:hover, .dropdown-menu2 a:focus,
+.dropdown-menu3 a:hover, .dropdown-menu3 a:focus{
+  text-decoration: none !important;
+  color:rgb(242, 90, 6) !important;
+}
+.dropdown-menu a:visited, .dropdown-menu2 a:visited, .dropdown-menu3 a:visited{
+  color:black ;
+}
+/*art_section*/
+  /* Menu*/
+
+/* main_images*/
+.main-images{
+  min-width:1500px;
+  width:100%;
+  height:auto;
+  min-height: 120vh;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+  margin-left:3px;
+  margin-right:3px;
+  z-index: 0;
+}
+#myCarousel{
+  display:block;
+  position: absolute;
+  width:98.5vw;
+  top:6px;
+}
+
+/* bottom Info */
+.info_content{
+   position: relative;
+   text-align:center;
+   margin-top:70px;
+}
+
+/*아이폰 6*/
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .main-page{
+      border: 2px solid black;
+    }
+    .empty-divider{
+      height:15px;
+    }
+    .web {
+      display:none !important;
+    }
+    .mobile{
+      display:inline-block !important;
+    }
+    .glyphicon-search:before{
+      font-size:19px;
+      color:rgb(99, 99, 99);
+      display:block;
+    }
+    .logo{
+      min-width: 100px;
+      min-height:30px;
+      height:30px;
+      width:auto;
+      margin-top:10px;
+      margin-left:15px;
+    }
+    .nav-main{
+        height:90px;
+    }
+    .nav-menu{
+      margin-top:13px;
+      font-size:10px;
+    }
+    .nav-menus{
+      margin-left:-15px;
+    }
+    .nav-menus{
+      margin-right:10px;
+      margin-top:-2px;
+    }
+    .search_icon{
+      font-size:20px;
+      color:rgb(99, 99, 99) !important;
+      display:block;
+    }
+    ul{
+       padding-left:6px;
+    }
+    .menu{
+      margin-top:30px;
+      height: 50vh;
+    }
+    .main_menu1{
+      font-size:12px;
+      margin-bottom: 4px;
+    }
+    .main_menu1_li{
+      font-size:10px;
+    }
+    .main_menu2{
+      font-size:12px;
+      margin-bottom: 8px;
+    }
+    .main_menu2_li{
+      font-size:10px;
+    }
+    .main_menu3{
+      font-size:8px;
+    }
+    .main_menu4{
+      font-size:8px;
+    }
+    .main_menu4_li{
+      font-size:6px;
+    }
+    .main-images{
+      min-width:320px;
+      min-height:60vh;
+      background-size: 100% 100%;
+    }
+    .info_content{
+       margin-top:5px;
+       font-size:15px;
+    }
+    .info{
+      margin-top:80px;
+    }
+    #info_title{
+      font-size:20px;
+      margin-bottom: 15px;
+    }
+    .footer{
+      font-size:10px;
+    }
+    .dropdown-menu{
+      top:140% !important;
+      left:-80px !important;
+      min-width: 130px !important;
+    }
+}
