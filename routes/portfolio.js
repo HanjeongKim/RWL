@@ -12,6 +12,8 @@ var connection = mysql.createConnection({
   database : db_config.db_info.database
 });
 
+var request = require('request');
+
 
 //image upload
 var multer = require('multer');
@@ -71,18 +73,41 @@ router.post('/enroll/register', upload.array('file'),function(req, res, next){
 					'title': req.body.title,
 					'first_price':req.body.first_price,
 					'last_price':req.body.first_price};
-	
-	connection.query('INSERT INTO artwork set ?', 
-		artworkObj,
-		function(err, result) {
+	request({
+	    	headers: {
+		      	"Content-Type":"application/json",
+		      	"Prediction-key":"8774eb8cea5445bfa3c2832792ca7ef0"
+		    },
+		    uri: "https://southcentralus.api.cognitive.microsoft.com/customvision/v1.1/Prediction/32cccc7f-8cad-4fd3-ae3a-6f322659ad8b/url?iterationId=5c85a5a4-56f7-4dcf-b3e1-db19d21ab53b",
+		    form: {
+			  "Url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuDm9In4JFxxHZYtzu8gNkUMLO1hWXGNPbHhjBykzcdvzYwSYt0w"
+			},
+		    method: 'POST'
+		}, function (err, resp, body) {
 			if(err) {
 				console.log(err);
-				res.render('error');
-			} 
-			if(result) {
-				res.redirect('/portfolio/user/'+seller_id);
 			}
+			console.log('img api');
+			var predictions = JSON.parse(body).Predictions;
+			var tag ='';
+		    for(var i=0; i<3; i++) {
+		    	tag += predictions[i].Tag+',';
+		    }
+		    artworkObj.tag = tag;
+		    connection.query('INSERT INTO artwork set ?', 
+				artworkObj,
+				function(err, result) {
+					if(err) {
+						console.log(err);
+						res.render('error');
+					} 
+					if(result) {
+						res.redirect('/portfolio/user/'+seller_id);
+					}
+				});
 		});
+	
+	
 	
 });
 router.get('/detail/:artworkId', function(req,res,next){
