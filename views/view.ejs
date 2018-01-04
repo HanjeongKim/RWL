@@ -3,7 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>WannaOne::금융상품 상세보기</title>
+    <title>작품 상세보기</title>
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
     <style>
         @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
         .tb_container {
@@ -36,8 +40,10 @@
         .content-div {
             margin-left: 27%;
             margin-top: 80px;
+/*
             width: 820px;
             height: 680px;
+*/
             /*            background-color: gold;*/
             text-align: center;
         }
@@ -65,8 +71,10 @@
         }
 
         #content-2-name {
-            font-size: 40px;
+            font-size: 35px;
             font-family: 'Jeju Gothic';
+         text-align: left;
+         margin:50px;
         }
 
         #content-2-description {
@@ -101,7 +109,7 @@
 
         #goback-btn {
             cursor:pointer;
-            width: 90px;
+            width: 100px;
             height: 60px;
             border-style: solid;
             border-width: 5px;
@@ -137,9 +145,28 @@
 
         }
 
-                
+      #box{
+         border-style:solid;
+         border-width:medium;
+      }        
 
     </style>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.auction-btn').click(function(){
+                var last_price = $('.last_price').html();
+                var price = prompt("가격을 적어주세요", last_price);
+                if(price != null) {
+                    if(price <= last_price) {
+                        alert('현재가보다 큰 금액을 적어주세요');
+                    } else {
+                        $('.last_price').html(price);
+                    }
+                }
+              
+            }); 
+        });
+    </script>
    
 </head>
 
@@ -147,29 +174,42 @@
    
         <div class="content-div">
            
-             <hr style="width:780px; height:5px; background-color:#248278; margin-left:30%;">
             <!--            상품명, 상품 설명-->
             <div id="content-2-5">
-                <div id="content-2-name">
-                    <%=artworks[0].name%>
-                </div>
-                <div id="content-2-img" style="width:650; height:600;">
-                    <%=artworks[0].img%>
-                </div>
-                
-                
-                <div id="content-2-price">
-                    <%=artworks[0].last_price%>
-                </div>
-                <div id="content-2-description">
-                    <%=artworks[0].description%>
-                </div>
+             
+            <table>
+            <tr>   
+               <td><div id="content-2-img" style="width:650; height:600;">
+                  <img src="/uploads/<%=artworks[0].img_url%>" />
+                  </div>
+               </td>
+               
+               <td>
+                  <div id="box">
+                  <div id="content-2-name">
+                     작품명: <%=artworks[0].title%>
+                  </div>
+                  <div id="content-2-name">
+                     시작가: <%=artworks[0].first_price%>원
+                  </div>
+                  <div id="content-2-name" >
+                     현재가: <span class="last_price"><%=artworks[0].last_price%></span>원
+                  </div>
+                  <div id="content-2-name">
+                     작품 설명: <%=artworks[0].description%>
+                  </div>
+                  <div id="content-2-name">
+                     Tag: <br><%=artworks[0].tag%>
+                  </div>
+                  </div>
+               </td>
+            </tr>
+            </table>
             </div>
             
-              <hr style="width:780px; height:5px; background-color:#248278; margin-left:30%;">
             
-            <div id="content-5-5">
-                <button id="goback-btn" type="button">경매참여</button>
+            <div id="content-5-5" align-items>
+                <button id="goback-btn" class="auction-btn" type="button" >경매참여</button>
                 <button id="goback-btn" type="button" onClick="history.back();">돌아가기</button>
             </div>
         </div>
