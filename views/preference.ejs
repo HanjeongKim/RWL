@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/hanna.css">
+  <link rel="stylesheet" href="/stylesheets/select.css">
+  <link rel="stylesheet" href="/stylesheets/normal.css">
+  <link rel="stylesheet" href="/stylesheets/side_nav.css">
+  <link rel="stylesheet" href="/stylesheets/side_nav_mobile.css">
+  <!-- Latest compiled and minified CSS-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript-->
+  <script src="https://use.fontawesome.com/af38281411.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="SHORTCUT ICON" href="/images/MainLogo2.png">
+  <title>RWL</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+  <script src="https://super8ky.cafe24.com/js/blocksit.min.js"></script>
+</head>
+<body>
+<header class="nav-main">
+  <div class="row">
+    <div id="menuicon" class="col-md-1 col-sm-1 col-xs-1 mobile"><span style="cursor:pointer" onclick="openNav()">☰</span></div>
+    <div id="mySidenav" class="sidenav mobile"><a href="javascript:void(0)" onclick="closeNav()" class="closebtn">×</a>
+      <ul>
+        <li class="main_menu1">Home</li>
+        <li class="main_menu1">ARTWORKS</li>
+      </ul>
+    </div>
+    <div style="text-align:center" class="col-sm-2 col-xs-9 col-md-2 col-lg-2 cursor">
+      <a href="/" style="display:inline-block;">
+        <!-- <img src="/images/MainLogo3.png" alt="" style="height:30px;" class="logo"/> -->
+      </a>
+    </div>
+    <div class="nav-menu col-lg-9 col-md-9 col-sm-9 col-xs-1">
+      <a href="/login" class="nav-menus cursor web">
+        <span>HOME</span>
+      </a>
+      <a href="/login" class="nav-menus cursor web">
+        <span>ARTWORKS</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="container-fluid">
+  <div class="select_outline">
+    <button id="selectBtn">선택완료</button>
+    <div class="row">
+      <div class="col-sm-offset-1 col-xs-10">
+        <div class="row">
+            <% for(var i=0; i<28; i++) {%>
+          <!--<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">-->
+            <!--<div class="select_imgholder">-->
+              <!--<img src="/images/artworks/작품1.jpg" alt="" class="select_images" onclick="select(<%=i%>)">-->
+            <!--</div>-->
+          <!--</div>-->
+
+            <% } %>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="select_imgholder">
+              <img src="/images/preference/Cubism/1.jpg" alt="" class="select_images" name='Cubism' onclick="select(0)">
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="select_imgholder">
+              <img src="/images/preference/Cubism/2.jpeg" alt="" class="select_images" name='Cubism' onclick="select(1)">
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="select_imgholder">
+              <img src="/images/preference/Cubism/3.jpg" alt="" class="select_images" name='Cubism' onclick="select(2)">
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="select_imgholder">
+              <img src="/images/preference/Cubism/4.png" alt="" class="select_images" name='Cubism' onclick="select(3)">
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="select_imgholder">
+              <img src="/images/preference/Extreme realism/1.jpg" alt="" class="select_images" name='Extreme_realism' onclick="select(4)">
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="select_imgholder">
+              <img src="/images/preference/Extreme realism/2.jpg" alt="" class="select_images" name='Extreme_realism' onclick="select(5)">
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="select_imgholder">
+              <img src="/images/preference/Extreme realism/4.jpg" alt="" class="select_images" name='Extreme_realism' onclick="select(6)">
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="select_imgholder">
+              <img src="/images/preference/Fauvism/2.jpeg" alt="" class="select_images" name='Fauvism' onclick="select(7)">
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="select_imgholder">
+              <img src="/images/preference/Fauvism/3.jpeg" alt="" class="select_images" name='Fauvism' onclick="select(8)">
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="select_imgholder">
+              <img src="/images/preference/impressionism/1.jpg" alt="" class="select_images" name='impressionism' onclick="select(9)">
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="select_imgholder">
+              <img src="/images/preference/impressionism/2.jpeg" alt="" class="select_images" name='impressionism' onclick="select(10)">
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="select_imgholder">
+              <img src="/images/preference/impressionism/3.jpg" alt="" class="select_images" name='impressionism' onclick="select(11)">
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="select_imgholder">
+              <img src="/images/preference/impressionism/4.jpg" alt="" class="select_images" name='impressionism' onclick="select(12)">
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="select_imgholder">
+              <img src="/images/preference/Fauvism/2.jpeg" alt="" class="select_images" name='Fauvism' onclick="select(13)">
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="select_imgholder">
+              <img src="/images/preference/Fauvism/3.jpeg" alt="" class="select_images" name='Fauvism' onclick="select(14)">
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="select_imgholder">
+              <img src="/images/preference/pop art/1.jpg" alt="" class="select_images" name='pop_art' onclick="select(15)">
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="select_imgholder">
+              <img src="/images/preference/pop art/2.jpg" alt="" class="select_images" name='pop_art' onclick="select(16)">
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="select_imgholder">
+              <img src="/images/preference/pop art/3.jpeg" alt="" class="select_images" name='pop_art' onclick="select(17)">
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="select_imgholder">
+              <img src="/images/preference/pop art/4.jpg" alt="" class="select_images" name='pop_art' onclick="select(18)">
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="select_imgholder">
+              <img src="/images/preference/realism/1.jpg" alt="" class="select_images" name='realism' onclick="select(19)">
+            </div>
+          </div>
+          <!--<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">-->
+            <!--<div class="select_imgholder">-->
+              <!--<img src="/images/preference/realism/2.jpg" alt="" class="select_images" name='realism' onclick="select(32)">-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">-->
+            <!--<div class="select_imgholder">-->
+              <!--<img src="/images/preference/realism/3.jpg" alt="" class="select_images" name='realism' onclick="select(33)">-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">-->
+            <!--<div class="select_imgholder">-->
+              <!--<img src="/images/preference/surrealism/1.jpg" alt="" class="select_images" name='surrealism' onclick="select(34)">-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">-->
+            <!--<div class="select_imgholder">-->
+              <!--<img src="/images/preference/surrealism/2.jpg" alt="" class="select_images" name='surrealism' onclick="select(35)">-->
+            <!--</div>-->
+          <!--</div>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    var count = 0;
+
+    function select(i){
+        var select_images = document.getElementsByClassName('select_images');
+        var select_imgholder = document.getElementsByClassName('select_imgholder');
+        var name = "checked";
+        var arr = select_imgholder[i].className.split(" ");
+
+        if (arr.indexOf(name) == -1) {
+            if(count <3){
+                select_imgholder[i].className += " " + name;
+                count ++;
+            }
+            console.log(count);
+        }
+        else{
+            select_imgholder[i].classList.remove("checked");
+            count --;
+        }
+    }
+    $(function(){
+        $('#selectBtn').click(function(){
+            console.log('선택완료');
+            var tag='';
+            var select_imgholder = document.getElementsByClassName('select_imgholder');
+
+            for(var i=0;i<select_imgholder.length;i++){
+                console.log(select_imgholder[i].classList[1]=='checked');
+                if(select_imgholder[i].classList[1]=='checked'){
+                    tag+=select_imgholder[i].lastElementChild.name+';';
+                }
+            }
+            console.log(tag);
+            $.ajax({
+                type : 'POST',
+                url : "/preference/select",
+                data : {"tag" : tag, "id":2},
+                // 성공적으로 값을 서버로 보냈을 경우 처리하는 코드입니다.
+                success : function (data) {
+                    // 서버에서 Return된 값으로 중복 여부를 사용자에게 알려줍니다.
+                    if (data) {
+                        console.log('success');
+                        console.log(data);
+                        location.href=data.result;
+                    } else {
+                        console.log('fail');
+                    }
+                }
+            });
+        });
+    });
+
+</script>
+</body>
+
+</html>

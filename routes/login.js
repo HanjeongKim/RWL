@@ -2,6 +2,7 @@ var express = require('express');
 var mysql      = require('mysql');
 var db_config  = require('../config');
 var router = express.Router();
+var session = require('session');
 var connection = mysql.createConnection({
   host     : 'rwl.c6c0si2eyhwe.ap-northeast-2.rds.amazonaws.com',
   user     : db_config.db_info.user,
@@ -11,13 +12,19 @@ var connection = mysql.createConnection({
 });
 
 router.post('/', function(req, res, next) {
-  connection.query('SELECT * from user where position = "seller" and id ="'+req.body.id+'"', function(err, rows, fields) {
+  connection.query('SELECT * from user where id ="'+req.body.id+'"', function(err, rows, fields) {
     if (!err){
       console.log('The solution is: ', rows);
       console.log(req.body.password);
       console.log(rows[0].password);
       if(req.body.password == rows[0].password){
-          res.redirect('/portfolio/user/'+req.body.id);
+        console.log(rows[0].position);
+          if(rows[0].position=='seller'){
+            res.redirect('/portfolio/user/'+req.body.id);
+          }else{
+            res.redirect('/preference');
+          }
+
       }
       else{
           res.redirect('/login/error');

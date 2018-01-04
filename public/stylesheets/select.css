@@ -1,0 +1,33 @@
+.select_outline{
+  margin-top:150px;
+}
+
+.select_imgholder{
+  width: 250px;
+  height:250px;
+  margin:10px;
+}
+
+.select_imgholder:hover{
+  width: 250px;
+  height:250px;
+  margin:10px;
+  background-color: white;
+  opacity: 0.6;
+}
+
+.select_images{
+  width: 250px;
+  height:250px;
+  cursor:pointer;
+}
+
+.checked{
+  background: black !important;
+  opacity: 0.3;
+}
+
+.checked:hover  {
+  background: black !important;
+  opacity: 0.3;
+}
