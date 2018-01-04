@@ -22,6 +22,16 @@
     <title>RWL</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
     <script src="https://super8ky.cafe24.com/js/blocksit.min.js"></script>
+    <style>
+      .last_price {
+        font-size: 20px;
+        float: left;
+        margin: 5px;
+      }
+      .choose1 {
+        float: right;
+      }
+    </style>
 </head>
 
 <body>
@@ -77,30 +87,15 @@
             <div class="col-sm-offset-2 col-xs-offset-1 col-sm-8 col-md-8 col-xs-10 artworks_img">
               <div id="maingrid">
                 <ul>
+                <% for(var i=0; i< artworks.length; i++){%>
                   <li class="grid">
-                    <div class="imgholder"><a href="/"><img src="/images/artworks/작품1.jpg" border="0" alt="Null"/></a><a href="/">
+
+                    <div class="imgholder"><a href="/"><img src="/uploads/<%=artworks[i].img_url%>" border="0" alt="Null"/></a><span class="last_price">현재가: <%=artworks[i].last_price%>원</span>
+                    <a href="/portfolio/detail/<%=artworks[i].id%>">
+
                         <button class="custom-btn choose1">작품 상세 보기</button></a></div>
                   </li>
-                  <li class="grid">
-                    <div class="imgholder"><a href="/"><img src="/images/artworks/작품2.jpg" border="0" alt="Null"/></a><a href="/">
-                        <button class="custom-btn choose1">작품 상세 보기</button></a></div>
-                  </li>
-                  <li class="grid">
-                    <div class="imgholder"><a href="/"><img src="/images/artworks/작품3.jpg" border="0" alt="Null"/></a><a href="/">
-                        <button class="custom-btn choose1">작품 상세 보기</button></a></div>
-                  </li>
-                  <li class="grid">
-                    <div class="imgholder"><a href="/"><img src="/images/artworks/작품4.jpg" border="0" alt="Null"/></a><a href="/">
-                        <button class="custom-btn choose1">작품 상세 보기</button></a></div>
-                  </li>
-                  <li class="grid">
-                    <div class="imgholder"><a href="/"><img src="/images/artworks/작품5.jpg" border="0" alt="Null"/></a><a href="/">
-                        <button class="custom-btn choose1">작품 상세 보기</button></a></div>
-                  </li>
-                  <li class="grid">
-                    <div class="imgholder"><a href="/"><img src="/images/artworks/작품6.jpg" border="0" alt="Null"/></a><a href="/">
-                        <button class="custom-btn choose1">작품 상세 보기</button></a></div>
-                  </li>
+                  <%}%>
                 </ul>
               </div>
             </div>
