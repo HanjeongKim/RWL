@@ -80,7 +80,7 @@ router.post('/enroll/register', upload.array('file'),function(req, res, next){
 		    },
 		    uri: "https://southcentralus.api.cognitive.microsoft.com/customvision/v1.1/Prediction/32cccc7f-8cad-4fd3-ae3a-6f322659ad8b/url?iterationId=5c85a5a4-56f7-4dcf-b3e1-db19d21ab53b",
 		    form: {
-			  "Url": "http://192.168.51.20:3000/uploads/1515102010282.jpg"
+			  "Url": "https://104.198.112.172/:3000/uploads/"+req.files[0].filename
 			},
 		    method: 'POST'
 		}, function (err, resp, body) {
