@@ -24,14 +24,14 @@ router.post('/select', function(req, res, next){
     tag=req.body.tag;
     console.log('tag : '+tag);
     var mytag=tag.replace(/;/g, '%');
-    mytag='%'+mytag+'%';
+    mytag='%'+mytag;
     console.log(mytag);
     connection.query('update user set prefer=? where id=?',[tag,req.body.id], function(err, rows, fields) {
         if (!err) {
             console.log('user prefer insert');
             //res.json({result:'/portfolio/seller/'+req.body.id+'/'+mytag});
             res.json({result:'/portfolio/seller/'+tag});
-            res.render('portfolio', { userId:req.params.userid });
+            //res.render('portfolio', { userId:req.params.userid });
 
           //  res.redirect('/portfolio/seller/'+req.body.id+'/'+mytag);
         }

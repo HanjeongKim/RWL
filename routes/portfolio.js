@@ -125,13 +125,15 @@ connection.query('SELECT * FROM artwork WHERE id =?',req.params.artworkId, funct
   
 });
 
-router.get('/seller/:mytag', function(req, res, next){
+router.get('/seller/:tag', function(req, res, next){
     console.log('seller');
-    connection.query('select * from artwork where tag like ? and status=? order by update_date desc LIMIT 9;',[req.param.mytag,''], function(err, rows, fields) {
+    var mytag = req.params.tag.replace(/;/g, '%');
+    mytag='%'+mytag;
+    connection.query('select * from artwork where tag like ? order by update_date desc LIMIT 9;',[mytag], function(err, rows, fields) {
         if (!err) {
           console.log(rows);
           //res.json({result:rows});
-            res.render('portfolio', {result:rows});
+            res.render('portfolio', {artworks:rows, userId:''});
         }
         else{
             res.redirect('/login/error');

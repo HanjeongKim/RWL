@@ -16,8 +16,7 @@
     "mysql": "^2.15.0",
     "nodemon": "^1.14.7",
     "serve-favicon": "~2.4.5",
-    "session": "^0.1.0"
-    "request": "^2.83.0",
-    "serve-favicon": "~2.4.5"
+    "session": "^0.1.0",
+    "request": "^2.83.0"
   }
 }
