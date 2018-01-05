@@ -90,10 +90,10 @@ router.post('/enroll/register', upload.array('file'),function(req, res, next){
 			console.log('img api');
 			console.log(resp);
 			var predictions = JSON.parse(body).Predictions;
-			var tag ='';
-		    for(var i=0; i<3; i++) {
-		    	tag += predictions[i].Tag+',';
-		    }
+			var tag ='impressionist';
+		    // for(var i=0; i<3; i++) {
+		    // 	tag += predictions[i].Tag+',';
+		    // }
 		    artworkObj.tag = tag;
 		    connection.query('INSERT INTO artwork set ?', 
 				artworkObj,
